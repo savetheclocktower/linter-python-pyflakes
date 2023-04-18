@@ -1,7 +1,7 @@
 {
   "name": "linter-python-pyflakes",
   "linter-package": true,
-  "main": "./lib/init",
+  "main": "./lib/main",
   "version": "0.1.0",
   "description": "Linting Python files on the fly using pyflakes command",
   "activationEvents": [],
@@ -9,6 +9,20 @@
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "configSchema": {
+    "pyflakesDirToExecutable": {
+      "title": "Path to pyflakes",
+      "description": "The absolute path to the `pyflakes` binary.",
+      "type": "string"
+    }
   },
   "dependencies": {}
 }
